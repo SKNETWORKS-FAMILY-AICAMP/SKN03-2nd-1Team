@@ -77,22 +77,22 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "examplesdb", # 데이터베이스 이름
-        "USER": "urstory", # mysql 아이디
-        "PASSWORD": "u1234", # mysql 비번
-        "HOST": "localhost", # host 주소
-        "PORT": "3306" # 포트
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "examplesdb", # 데이터베이스 이름
+#         "USER": "urstory", # mysql 아이디
+#         "PASSWORD": "u1234", # mysql 비번
+#         "HOST": "localhost", # host 주소
+#         "PORT": "3306" # 포트
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
