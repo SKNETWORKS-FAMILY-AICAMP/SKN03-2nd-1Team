@@ -1,5 +1,98 @@
-h1{
-    color: red;
-    font-size: 50px;
-    text-align: center;
+body {
+    margin: 0;
+    display: flex;
 }
+
+/* 내용 & 스크롤 */
+.content-container {
+    width: auto;
+    height: 200px;
+    overflow: auto;
+    background-color: rgb(245, 246, 248);
+}
+.content-container::-webkit-scrollbar {
+    width: 10px;
+}
+.content-container::-webkit-scrollbar-thumb {
+    background-color: rgb(119, 114, 136);
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+.content-container::-webkit-scrollbar-track {
+    background-color: rgb(220, 223, 226);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+
+main {
+    margin-left: 135px; /* 네비게이션 바의 너비 + 간격 */
+    padding: 30px;
+    flex-grow: 1;
+    margin-right: 20px; /* 오른쪽 여백 */
+    margin-bottom: 20px; /* 하단 여백 */
+}
+
+
+/* 테이블 전체 스타일 */
+.table {
+    width: 100%; /* 테이블의 너비를 100%로 설정 */
+    border-collapse: collapse; /* 테이블 셀의 경계가 겹치지 않도록 설정 */
+}
+.rank {
+    text-align: center; /* 중앙 정렬 */
+    padding-top: 15px;
+    width: 30px;
+}
+.name {
+    text-align: center; /* 중앙 정렬 */
+    width: 250px;
+    padding-top: 15px;
+}
+.address {
+    text-align: left; /* 중앙 정렬 */
+    width: auto;
+    padding-top: 15px;
+}
+
+
+nav {
+    background-color: rgb(173, 173, 179);
+    padding: 60px 20px; 
+    text-align: center;
+    width: 120px; /* 네비게이션 바의 너비 고정 */
+    height: 100vh; /* 화면 전체 높이 */
+    position: fixed; 
+    /* 화면의 왼쪽에 고정 */
+    left: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    /* align-items: flex-start; */
+
+}
+/* 네비게이션바 */
+.icon {
+    cursor: pointer;
+    padding: 15px;
+    /* border: 1px solid #ccc; */
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+.icon i {
+    margin-right: 8px;
+}
+/* 반응 */
+.icon:hover {
+    background-color: rgb(220, 223, 226);
+    border-radius: 7px;
+}
+
+.content {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+

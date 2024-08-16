@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/rank/rank.css' %}">
+    <script src="https://kit.fontawesome.com/331ae98b90.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Rank Page</h1>
+    <nav class="navbar">
+        <div class="icon" onclick="loadContent('CA00')">
+            <i class="fa-solid fa-hot-tub-person"></i>온천
+        </div>
+        <div class="icon" onclick="loadContent('CA01')">
+            <i class="fa-solid fa-tree"></i> 수목원
+        </div>
+        <div class="icon" onclick="loadContent('CA03')">
+            <i class="fa-solid fa-paint-brush"></i> 미술관
+        </div>
+        <div class="icon" onclick="loadContent('CA02')">
+            <i class="fa-solid fa-egg"></i> 사우나
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- 내용이 동적으로 로드될 곳 -->
+        <section id="{{ category }}" class="content">
+            <article>
+                <h2>수도권 {{ category_name }} Top 10</h2>
+                <div class="content-container">
+                    {% for i in places %}
+                        <table>
+                            <tr>
+                                <td class="rank">{{ i.rank }}</td>
+                                <td class="name">{{ i.name }}</td>
+                                <td class="address">{{ i.address }}</td>
+                            </tr>
+                        </table>
+                    {% endfor %}
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        function loadContent(category) {
+            fetch(`/rank/${category}/`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('main-content').innerHTML = data;
+                    document.querySelectorAll('.content').forEach(function(content) {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(category).classList.add('active');
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // 페이지 로드 시 기본 콘텐츠를 로드합니다.
+        document.addEventListener('DOMContentLoaded', function() {
+            loadContent('{{ category }}');  // 기본 카테고리로 기본 콘텐츠 로드
+        });
+    </script>
 </body>
 </html>
