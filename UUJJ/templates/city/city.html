@@ -1,35 +1,72 @@
-{% load static %}
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>장소 버튼</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAP</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/city.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
+    <link rel="stylesheet" href="{% static 'css/city/city.css' %}" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        .leaflet-container {
+        background: transparent;
+        }
+        .leaflet-control-attribution {
+            display: none;
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{% static 'js/city/city.js' %}"></script>
 </head>
+
 <body>
-    <h1>&#127800;대한민국 수도권&#127800;</h1>
-    <div class="button-container">
-        <button class="icon-button" onclick="showAlert('목욕탕')">
-            <i class="fas fa-hot-tub"></i>
-            목욕탕
-        </button>
-        <button class="icon-button" onclick="showAlert('찜질방')">
-            <i class="fas fa-fire"></i>
-            찜질방
-        </button>
-        <button class="icon-button" onclick="showAlert('수목원')">
-            <i class="fas fa-tree"></i>
-            수목원
-        </button>
-        <button class="icon-button" onclick="showAlert('미술관')">
-            <i class="fas fa-palette"></i>
-            미술관
-        </button>
-    </div>
-    <script src="{% static 'js/button_click.js' %}"></script>
+    <!-- 전체 크기 잡기 -->
+    <section id="all-section" class="container-fluid">
+        <!-- 중간 정렬 -->
+        <section id="middle_section">
+            <!-- 머리 -->
+            <header>
+                <div id="HOME">HOME</div>
+            </header>
+            <!-- 가슴 -->
+            <section id="main_con">
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
+                <div id="bt_area">
+                    <div id="bts">
+                        <!-- 수목원 -->
+                        <div id="arboretum">
+                            <a href="">
+                                <img src="{% static 'img/arboretum.png' %}" alt="Arboretum" />
+                            </a>
+                        </div>
+                        <!-- 미술관 -->
+                        <div id="gallery">
+                            <a href="">
+                                <img src="{% static 'img/gallery.png' %}" alt="Art Gallery" />
+                            </a>
+                        </div>
+                        <!-- 온천 -->
+                        <div id="spa">
+                            <a href="">
+                                <img src="{% static 'img/spa.png' %}" alt="Hot Springs" />
+                            </a>
+                        </div>
+                        <!-- 찜질방 -->
+                        <div id="sauna">
+                            <a href="">
+                                <img src="{% static 'img/sauna.png' %}" alt="Sauna" />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 라인!! -->
+                    <div id="bt_line"></div>
+                </div>
+            </section>
+            <!-- 발 -->
+            <footer></footer>
+        </section>
+    </section>   
 </body>
 </html>
