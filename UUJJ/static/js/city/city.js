@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollWheelZoom: false,    
         doubleClickZoom: false,   
         touchZoom: false          
-    }).setView([37.5665, 126.978], 9);
+    }).setView([37.5665, 127.12], 9);
 
     fetch(geojsonUrl)
         .then(response => response.json())
@@ -15,9 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
             L.geoJSON(data, {
                 style: function(feature) {
                     return {
-                        color: feature.properties.color || "#BBBBBB", 
-                        weight: 2,
-                        fillColor: feature.properties.fillColor || "#66822E", 
+                        color: feature.properties.color || "#322F20", 
+                        weight: 5,
+                        fillColor: feature.properties.fillColor || "#FFE55A", 
                         fillOpacity: 0.8
                     };
                 },
