@@ -1,26 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
-   <title>MAP</title>
-   {% load static %}
-   <link rel="stylesheet" href="{% static 'css/city/city.css' %}" />
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-   <style>
-      .leaflet-container {
-         background: transparent;
-      }
-      .leaflet-control-attribution {
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAP</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/city/city.css' %}" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        .leaflet-container {
+        background: transparent;
+        }
+        .leaflet-control-attribution {
             display: none;
-      }
-   </style>
-   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-   <script src="{% static 'js/city/city.js' %}"></script>
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{% static 'js/city/city.js' %}"></script>
 </head>
 
+
 <body>
+    <!-- 전체 크기 잡기 -->
+    <section id="all-section" class="container-fluid">
+        <!-- 중간 정렬 -->
+        <section id="middle_section">
+            <!-- 머리 -->
+            <header>
+                <div id="HOME">HOME</div>
+            </header>
+            <!-- 가슴 -->
+            <section id="main_con">
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
+                <div id="bt_area">
+                    <div id="bts">
+                        <!-- 수목원 -->
+                        <div id="arboretum">
+                            <a href="">
+                                <img src="{% static 'img/arboretum.png' %}" alt="Arboretum" />
+                            </a>
+                        </div>
+                        <!-- 미술관 -->
+                        <div id="gallery">
+                            <a href="">
+                                <img src="{% static 'img/gallery.png' %}" alt="Art Gallery" />
+                            </a>
+                        </div>
+                        <!-- 온천 -->
+                        <div id="spa">
+                            <a href="">
+                                <img src="{% static 'img/spa.png' %}" alt="Hot Springs" />
+                            </a>
+                        </div>
+                        <!-- 찜질방 -->
+                        <div id="sauna">
+                            <a href="">
+                                <img src="{% static 'img/sauna.png' %}" alt="Sauna" />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 라인!! -->
+                    <div id="bt_line"></div>
+                </div>
+            </section>
+            <!-- 발 -->
+            <footer></footer>
+        </section>
+    </section>   
    <!-- 전체 크기 잡기 -->
    <section id="all-section" class="container-fluid">
       <!-- 중간 정렬 -->
