@@ -2,8 +2,10 @@
 /* 폰트 전역 설정 */
 body {
    font-family: "Jua", sans-serif;
-   font-weight: 500;
    font-style: normal;
+   background: #FFE5E5 !important;
+   font-size: 1.5em;
+
 }
 /* 전체 크기, 배경 효과 */
 #all-section {
@@ -11,16 +13,16 @@ body {
    height: 100vh;
    background-size: cover;
    background-position: center;
-   background-image: url(../../img/background.png);
-}
-#middle_section {
-   background-color: rgba(00, 00, 00, 50%);
 }
 /* 각 컨텐츠 크기 */
 /* 머리15 몸통70 카드5 발10 */
 header {
-   height: 15vh;
-}
+   height: 10vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+} 
+
 #main_con {
    height: 70vh;
 }
@@ -36,30 +38,32 @@ footer {
    background-color: rgba(00, 00, 00, 50%);
    color: #eeeeee;
 }
+
 /* 로고/홈 버튼 */
 #logo img {
    width: 5vw;
 }
+
 /* 버튼 영역 및 호버 */
 #bt_area {
-   width: 500px;
-   height: 400px;
-   margin-top: 10vh;
+   width: 820px;
+   height: 700px;
+   margin-top: 5vh;
    position: relative;
 }
 
+
 #bt_area > div {
-   transition: transform 0.6s ease;
+   transition: transform 0.4s ease;
    width: 150px;
    height: 150px;
 }
+
 /* 호버 */
 #bt_area > div:hover {
    transform: translateY(-30px);
 }
-#bt_area > div > a > img {
-   height: 250px;
-}
+
 
 /* div 위치*/
 #Arboretum {
@@ -81,4 +85,26 @@ footer {
    z-index: 1;
    top: -5%;
    left: 25%;
+}
+
+
+#Arboretum > a > img {
+   width: 400px;
+   height: 493px;
+   cursor: pointer;
+}
+#gallery > a > img {
+   width: 400px;
+   height: 493px;
+   cursor: pointer;
+}
+#spa > a > img {
+   width: 400px;
+   height: 493px;
+   cursor: pointer;
+}
+#sauna > a > img {
+   width: 400px;
+   height: 493px;
+   cursor: pointer;
 }
