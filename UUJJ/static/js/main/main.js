@@ -8,7 +8,7 @@ Arboretum_hover.addEventListener("mouseover", () => {
 });
 
 Arboretum_hover.addEventListener("mouseleave", () => {
-   cardText.textContent = "블록을 선택해 주세요";
+   cardText.textContent = "나의 유유자적하고픈 장소는?";
 });
 
 // 미술관
@@ -19,7 +19,7 @@ gallery_hover.addEventListener("mouseover", () => {
 });
 
 gallery_hover.addEventListener("mouseleave", () => {
-   cardText.textContent = "블록을 선택해 주세요";
+   cardText.textContent = "나의 유유자적하고픈 장소는?";
 });
 
 // 온천
@@ -30,7 +30,7 @@ spa_hover.addEventListener("mouseover", () => {
 });
 
 spa_hover.addEventListener("mouseleave", () => {
-   cardText.textContent = "블록을 선택해 주세요";
+   cardText.textContent = "나의 유유자적하고픈 장소는?";
 });
 
 // 찜질방
@@ -41,5 +41,5 @@ sauna_hover.addEventListener("mouseover", () => {
 });
 
 sauna_hover.addEventListener("mouseleave", () => {
-   cardText.textContent = "블록을 선택해 주세요";
+   cardText.textContent = "나의 유유자적하고픈 장소는?";
 });
