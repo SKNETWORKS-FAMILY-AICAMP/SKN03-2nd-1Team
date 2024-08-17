@@ -1,6 +1,0 @@
-DB_NAME='UUJJ'
-DB_USER='admin'
-DB_PASSWORD='Dbdbwkwjr1234'
-DB_HOST='uujj-database.cd4ssucikeao.ap-northeast-2.rds.amazonaws.com'
-DB_PORT='3306'
-SECRET_KEY = 'django-insecure-sn%cb6n40-0l0j0nfa#5d+sc9#b3_xc!acc6e5vvzk*4@04^rm'
