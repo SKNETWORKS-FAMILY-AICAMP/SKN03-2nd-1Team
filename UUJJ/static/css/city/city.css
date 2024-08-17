@@ -3,111 +3,111 @@
 /* Global settings */
 body,
 html {
-   margin: 0;
-   padding: 0;
-   font-family: "Jua", sans-serif !important;
-   height: 100%;
-   overflow: hidden;
-   font-style: normal;
-   background: #ffe5e5 !important;
+    margin: 0;
+    padding: 0;
+    font-family: "Jua", sans-serif !important;
+    height: 100%;
+    overflow: hidden;
+    font-style: normal;
+    background: #ffe5e5 !important;
 }
 
 /* Header styles */
 header {
-   height: 10vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #logo img {
-   width: 5vw;
+    width: 5vw;
 }
 
 /* Main content styles */
 #main_con {
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Map container */
 #map-container {
-   width: 1200px;
-   height: 60vh;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   background: rgba(0, 0, 0, 0.5);
-   border-radius: 15px;
+    width: 1200px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 #map-desc {
-   color: #eeeeee;
-   font-size: 1.5em;
-   margin: 20px;
+    color: #eeeeee;
+    font-size: 1.5em;
+    margin: 20px;
 }
 
 /* Map styles */
 #map {
-   width: 60%;
-   height: 100%;
-   margin: 0 auto;
-   display: flex;
-   justify-content: center;
-   transform: scaleX(1.3);
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    transform: scaleX(1.3);
 }
 
 /* Button group */
 #bts {
-   display: flex;
-   height: 20vh;
-   justify-content: center;
-   align-items: center;
-   padding: 20px;
+    display: flex;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 /* Button images */
 #bts img {
-   margin: 0 30px;
-   width: 230px;
-   height: 282px;
-   cursor: pointer;
-   transition: transform 0.2s;
+    margin: 0 30px;
+    width: 230px;
+    height: 282px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 #bts img:hover {
-   transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 /* Bottom line */
 #bt_line {
-   height: 5vh;
-   position: relative;
+    height: 5vh;
+    position: relative;
 }
 
 #bt_line::after {
-   content: "";
-   display: block;
-   width: 1200px;
-   height: 6px;
-   background-color: #7c7372;
-   position: absolute;
-   bottom: 0;
-   left: 50%;
-   transform: translateX(-50%);
-   border-radius: 3px;
+    content: "";
+    display: block;
+    width: 1200px;
+    height: 6px;
+    background-color: #7c7372;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
 }
 
 /* Footer styles */
 footer {
-   height: 5vh;
-   color: #7c7372;
-   padding: 10px 30px;
-   text-align: center;
-   display: flex;
-   align-items: center;
+    height: 5vh;
+    color: #7c7372;
+    padding: 10px 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }

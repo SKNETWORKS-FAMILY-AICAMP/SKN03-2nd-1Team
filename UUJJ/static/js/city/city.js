@@ -16,24 +16,28 @@ document.addEventListener('DOMContentLoaded', function() {
     var icons = {
         arboretum: L.icon({
             iconUrl: '/static/img/arboretum.png',
+            // iconUrl: '/static/img/arboretum_icon.png',
             iconSize: [32, 32],
             iconAnchor: [16, 16],
             popupAnchor: [0, -16]
         }),
         gallery: L.icon({
             iconUrl: '/static/img/gallery.png',
+            // iconUrl: '/static/img/arboretum_icon.png',
             iconSize: [32, 32],
             iconAnchor: [16, 16],
             popupAnchor: [0, -16]
         }),
         spa: L.icon({
             iconUrl: '/static/img/spa.png',
+            // iconUrl: '/static/img/arboretum_icon.png',
             iconSize: [32, 32],
             iconAnchor: [16, 16],
             popupAnchor: [0, -16]
         }),
         sauna: L.icon({
             iconUrl: '/static/img/sauna.png',
+            // iconUrl: '/static/img/arboretum_icon.png',
             iconSize: [32, 32],
             iconAnchor: [16, 16],
             popupAnchor: [0, -16]
