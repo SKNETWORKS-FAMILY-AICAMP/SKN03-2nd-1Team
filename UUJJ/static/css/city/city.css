@@ -10,6 +10,7 @@ html {
    overflow: hidden;
    font-style: normal;
    background: #ffe5e5 !important;
+   max-width: 1440px;
 }
 
 /* Header styles */
@@ -21,7 +22,7 @@ header {
 }
 
 #logo img {
-   width: 5vw;
+   width: 15vw;
 }
 
 /* Main content styles */
