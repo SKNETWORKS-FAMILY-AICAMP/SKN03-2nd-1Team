@@ -3,7 +3,7 @@
 body {
    font-family: "Jua", sans-serif;
    font-style: normal;
-   background: #F8E8AD !important;
+   background: #f8e8ad !important;
    font-size: 1.3em;
 }
 /* 전체 크기, 배경 효과 */
@@ -22,10 +22,10 @@ body {
 /* 각 컨텐츠 크기 */
 /* 머리15 몸통70 카드5 발10 */
 header {
-   height: 15vh;
+   height: 10vh;
 }
 #main_con {
-   height: 70vh;
+   height: 80vh;
 }
 footer {
    height: 10vh;
@@ -118,7 +118,7 @@ footer {
    z-index: 2;
 }
 #bt_img a {
-   height: 25vh;
+   height: 23vh;
 }
 #shadow {
    position: absolute;
@@ -132,5 +132,5 @@ footer {
    height: inherit;
 }
 #Shadow > img {
-   height: 25vh;
+   height: 23vh;
 }

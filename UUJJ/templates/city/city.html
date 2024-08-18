@@ -16,9 +16,19 @@
             display: none;
          }
       </style>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
    </head>
    <body>
+      <script>
+         var spaCityList = {{ spa_city_list|safe }};
+         var arboretumCityList = {{ arboretum_city_list|safe }};
+         var saunaCityList = {{ sauna_city_list|safe }};
+         var galleryCityList = {{ gallery_city_list|safe }};
+
+         var top5_spa = {{ top5_spa|safe }};
+         var top5_arboretum = {{ top5_arboretum|safe }};
+         var top5_sauna = {{ top5_sauna|safe }};
+         var top5_gallery = {{ top5_gallery|safe }};
+      </script>
       <!-- 전체 크기 잡기 -->
       <section id="all-section">
          <!-- 중간 정렬 -->
@@ -46,7 +56,7 @@
                            <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/city/';">
                               <span>지도</span>
                            </button>
-                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/city/';">
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/rank/';">
                               <span>랭킹</span>
                            </button>
                         </div>
@@ -132,6 +142,6 @@
       </section>
       <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
       <script src="{% static 'js/city/city.js' %}"></script>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
    </body>
-   <!-- Bootstrap Bundle with Popper -->
 </html>
