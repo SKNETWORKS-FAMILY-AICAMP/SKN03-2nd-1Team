@@ -3,6 +3,7 @@
 body {
    font-family: "Jua", sans-serif;
    font-style: normal;
+   background: #F8E8AD !important;
    font-size: 1.3em;
 }
 
@@ -37,12 +38,14 @@ footer {
    background-color: rgba(00, 00, 00, 50%);
    color: #eeeeee;
 }
+
 /* 헤더 콘텐츠 */
 #header-content {
    width: 50vw;
    max-width: 1360px;
    position: relative;
 }
+
 /* 메뉴 */
 #menu_nav {
    position: absolute;
