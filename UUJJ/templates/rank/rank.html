@@ -5,8 +5,8 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Rank</title>
-      <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" />
-      <link rel="stylesheet" href="{%static 'css/rank/rank.css'%}" />
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/rank/rank.css' %}" />
    </head>
    <body>
       <!-- 전체 크기 잡기 -->
@@ -19,7 +19,7 @@
                   <!-- 메뉴 버튼 -->
                   <div id="menu_nav">
                      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                        <img src="{%static 'img/menu.png'%}" alt="메뉴버튼" />
+                        <img src="{% static 'img/menu.png' %}" alt="메뉴버튼" />
                      </button>
                   </div>
                   <!-- 숨김 메뉴 -->
@@ -45,7 +45,7 @@
                   <!-- 로고 -->
                   <div id="logo" class="d-flex justify-content-center">
                      <a href="">
-                        <img src="{%static 'img/logo.png'%}" alt="logo" />
+                        <img src="{% static 'img/logo.png' %}" alt="logo" />
                      </a>
                   </div>
                </div>
@@ -56,245 +56,89 @@
                <section id="Ranking_board" class="d-flex justify-content-center row">
                   <div id="board_title" class="row d-flex justify-content-center">
                      <div id="card_title" class="card shadow-lg d-flex justify-content-center align-items-center">
-                        <span id="card-text" class="card-body text-center">TOP 10 랭킹</span>
+                        <span id="card-text" class="card-body text-center">수도권 {{ category_name }} TOP 10</span>
                      </div>
                   </div>
                   <div id="board_area" class="row">
                      <div id="board_content">
+                        {% for place in places %}
                         <div id="board_item">
-                           <!-- 1번카드 -->
+                           <!-- 카드 생성 -->
                            <div id="board_card" class="card col">
                               <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
+                                 <h5 class="card-title">{{ place.rank }}</h5>
+                                 <!-- 순위 -->
+                                 <p class="card-text">{{ place.name }}</p>
+                                 <!-- 장소 이름 -->
                               </div>
                               <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
+                                 <li class="list-group-item">{{ place.address }}</li>
+                                 <!-- 주소 -->
                                  <li class="list-group-item">입장료</li>
                                  <li class="list-group-item">운영시간</li>
                               </ul>
                               <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
+                                 <a href="{{ place.url }}" class="card-link" target="_blank">홈페이지</a>
                                  <a href="#" class="card-link">네이버 지도</a>
                               </div>
                            </div>
                         </div>
-                        <div id="board_item">
-                           <!-- 2번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div id="board_item">
-                           <!-- 3번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div id="board_item">
-                           <!-- 4번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div id="board_item">
-                           <!-- 5번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div id="board_item">
-                           <!-- 6번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div id="board_item">
-                           <!-- 7번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div id="board_item">
-                           <!-- 8번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div id="board_item">
-                           <!-- 9번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
-                        <div id="board_item">
-                           <!-- 10번카드 -->
-                           <div id="board_card" class="card col">
-                              <div class="card-body">
-                                 <h5 class="card-title">이름</h5>
-                                 <p class="card-text">설명</p>
-                              </div>
-                              <ul class="list-group list-group-flush">
-                                 <li class="list-group-item">주소</li>
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
-                              </ul>
-                              <div class="card-body">
-                                 <a href="#" class="card-link">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
-                              </div>
-                           </div>
-                        </div>
+                        {% endfor %}
                      </div>
                   </div>
-               </section>
-               <section id="Ranking_bt" class="d-flex justify-content-center align-items-end">
-                  <!-- 버튼 영역 -->
-                  <div id="bt_area" class="row">
-                     <!-- 수목원 -->
-                     <div id="Arboretum" class="col p-1">
-                        <div id="bt_img">
-                           <a href="">
-                              <img src="{% static 'img/Arboretum.png' %}" alt="수목원" name="수목원" />
-                           </a>
-                        </div>
-                        <div id="Shadow">
-                           <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
-                        </div>
-                     </div>
-                     <!-- 미술관 -->
-                     <div id="gallery" class="col p-1">
-                        <div id="bt_img">
-                           <a href="">
-                              <img src="{% static 'img/gallery.png' %}" alt="미술관" name="미술관" />
-                           </a>
-                        </div>
-                        <div id="Shadow">
-                           <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
-                        </div>
-                     </div>
-                     <!-- 온천 -->
-                     <div id="spa" class="col p-1">
-                        <div id="bt_img">
-                           <a href="">
-                              <img src="{% static 'img/spa.png' %}" alt="온천" name="온천" />
-                           </a>
-                        </div>
-                        <div id="Shadow">
-                           <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
-                        </div>
-                     </div>
-                     <!-- 찜질방 -->
-                     <div id="sauna" class="col p-1">
-                        <div id="bt_img">
-                           <a href="">
-                              <img src="{% static 'img/sauna.png' %}" alt="찜질방" name="찜질방" />
-                           </a>
-                        </div>
-                        <div id="Shadow">
-                           <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
-                        </div>
-                     </div>
-                  </div>
-                  <!-- 언더 라인 -->
                </section>
             </section>
+
+            <section id="Ranking_bt" class="d-flex justify-content-center align-items-end">
+               <!-- 버튼 영역 -->
+               <div id="bt_area" class="row">
+                  <!-- 수목원 -->
+                  <div id="Arboretum" class="col p-1" onclick="loadContent('CA01')">
+                     <div id="bt_img">
+                        <a href="javascript:void(0);">
+                           <img src="{% static 'img/Arboretum.png' %}" alt="수목원" name="수목원" />
+                        </a>
+                     </div>
+                     <div id="Shadow">
+                        <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                     </div>
+                  </div>
+                  <!-- 미술관 -->
+                  <div id="gallery" class="col p-1" onclick="loadContent('CA03')">
+                     <div id="bt_img">
+                        <a href="javascript:void(0);">
+                           <img src="{% static 'img/gallery.png' %}" alt="미술관" name="미술관" />
+                        </a>
+                     </div>
+                     <div id="Shadow">
+                        <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                     </div>
+                  </div>
+                  <!-- 온천 -->
+                  <div id="spa" class="col p-1" onclick="loadContent('CA00')">
+                     <div id="bt_img">
+                        <a href="javascript:void(0);">
+                           <img src="{% static 'img/spa.png' %}" alt="온천" name="온천" />
+                        </a>
+                     </div>
+                     <div id="Shadow">
+                        <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                     </div>
+                  </div>
+                  <!-- 찜질방 -->
+                  <div id="sauna" class="col p-1" onclick="loadContent('CA02')">
+                     <div id="bt_img">
+                        <a href="javascript:void(0);">
+                           <img src="{% static 'img/sauna.png' %}" alt="찜질방" name="찜질방" />
+                        </a>
+                     </div>
+                     <div id="Shadow">
+                        <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                     </div>
+                  </div>
+               </div>
+            </section>
+
             <!-- 발 -->
             <footer>곰발바닥</footer>
          </section>
@@ -302,5 +146,4 @@
       <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
       <script src="{% static 'js/rank/rank.js' %}"></script>
    </body>
-   <!-- Bootstrap Bundle with Popper -->
 </html>
