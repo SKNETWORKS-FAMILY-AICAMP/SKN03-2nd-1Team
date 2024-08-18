@@ -1,11 +1,69 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Main Page</h1>
-</body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>mainmain</title>
+      <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" />
+      <link rel="stylesheet" href="{%static 'css/main/main.css'%}" />
+   </head>
+   <body>
+      <!-- 전체 크기 잡기 -->
+      <section id="all-section">
+         <!-- 중간 정렬 -->
+         <section id="middle_section">
+            <!-- 머리 -->
+            <header>
+               <div class="d-flex justify-content-center">
+                  <div id="logo">
+                     <a href="">
+                        <img src="{%static 'img/logo.png'%}" alt="logo" />
+                     </a>
+                  </div>
+               </div>
+            </header>
+            <div class="d-flex justify-content-center">
+               <div
+                  id="card"
+                  class="card shadow-lg d-flex justify-content-center align-items-center"
+               >
+                  <span id="card-text" class="card-body text-center">블록을 선택해 주세요</span>
+               </div>
+            </div>
+            <!-- 가슴 -->
+            <section id="main_con" class="d-flex justify-content-center">
+               <div id="bt_area">
+                  <!-- 수목원 -->
+                  <div id="Arboretum" class="col position-absolute p-1">
+                     <a href="">
+                        <img src="{% static 'img/Arboretum.png' %}" alt="수목원" name="수목원" />
+                     </a>
+                  </div>
+                  <!-- 미술관 -->
+                  <div id="gallery" class="col position-absolute p-1">
+                     <a href="">
+                        <img src="{% static 'img/gallery.png' %}" alt="미술관" />
+                     </a>
+                  </div>
+                  <!-- 온천 -->
+                  <div id="spa" class="col position-absolute p-1">
+                     <a href="">
+                        <img src="{% static 'img/spa.png' %}" alt="온천" />
+                     </a>
+                  </div>
+                  <!-- 찜질방 -->
+                  <div id="sauna" class="col position-absolute p-1">
+                     <a href="">
+                        <img src="{% static 'img/sauna.png' %}" alt="찜질방" />
+                     </a>
+                  </div>
+               </div>
+            </section>
+            <!-- 발 -->
+            <footer></footer>
+         </section>
+      </section>
+   </body>
+   <script src="{% static 'js/main/main.js' %}"></script>
 </html>
