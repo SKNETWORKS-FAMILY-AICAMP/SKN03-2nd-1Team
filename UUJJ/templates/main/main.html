@@ -4,7 +4,7 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>mainmain</title>
+      <title>main</title>
       <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" />
       <link rel="stylesheet" href="{%static 'css/main/main.css'%}" />
    </head>
@@ -14,9 +14,36 @@
          <!-- 중간 정렬 -->
          <section id="middle_section">
             <!-- 머리 -->
-            <header>
-               <div class="d-flex justify-content-center">
-                  <div id="logo">
+            <header class="d-flex justify-content-center">
+               <div id="header-content">
+                  <!-- 메뉴 버튼 -->
+                  <div id="menu_nav">
+                     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <img src="{%static 'img/menu.png'%}" alt="메뉴버튼" />
+                     </button>
+                  </div>
+                  <!-- 숨김 메뉴 -->
+                  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                     <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">메뉴</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                     </div>
+                     <div class="offcanvas-body d-flex justify-content-start">
+                        <div id="menu_bt" class="row">
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/';">
+                              <span>홈</span>
+                           </button>
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/city/';">
+                              <span>지도</span>
+                           </button>
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/rank/';">
+                              <span>랭킹</span>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- 로고 -->
+                  <div id="logo" class="d-flex justify-content-center">
                      <a href="">
                         <img src="{%static 'img/logo.png'%}" alt="logo" />
                      </a>
@@ -24,39 +51,48 @@
                </div>
             </header>
             <div class="d-flex justify-content-center">
-               <div
-                  id="card"
-                  class="card shadow-lg d-flex justify-content-center align-items-center"
-               >
-                  <span id="card-text" class="card-body text-center">블록을 선택해 주세요</span>
+               <div id="card" class="card shadow-lg d-flex justify-content-center align-items-center">
+                  <span id="card-text" class="card-body text-center">나의 유유자적 하고픈 장소는?</span>
                </div>
             </div>
             <!-- 가슴 -->
-            <section id="main_con" class="d-flex justify-content-center">
-               <div id="bt_area">
+            <section id="main_con" class="d-flex justify-content-center align-items-center">
+               <div id="bt_area" class="row">
                   <!-- 수목원 -->
-                  <div id="Arboretum" class="col position-absolute p-1">
-                     <a href="">
-                        <img src="{% static 'img/Arboretum.png' %}" alt="수목원" name="수목원" />
-                     </a>
+                  <div id="Arboretum" class="col p-1">
+                     <div id="bt_img">
+                        <a href="">
+                           <img src="{% static 'img/Arboretum.png' %}" alt="수목원" name="수목원" />
+                        </a>
+                     </div>
+                     <div id="Shadow"><img src="{% static 'img/Shadow.png' %}" alt="그림자" /></div>
                   </div>
                   <!-- 미술관 -->
-                  <div id="gallery" class="col position-absolute p-1">
-                     <a href="">
-                        <img src="{% static 'img/gallery.png' %}" alt="미술관" />
-                     </a>
+                  <div id="gallery" class="col p-1">
+                     <div id="bt_img">
+                        <a href="">
+                           <img src="{% static 'img/gallery.png' %}" alt="미술관" name="미술관" />
+                        </a>
+                     </div>
+                     <div id="Shadow"><img src="{% static 'img/Shadow.png' %}" alt="그림자" /></div>
                   </div>
                   <!-- 온천 -->
-                  <div id="spa" class="col position-absolute p-1">
-                     <a href="">
-                        <img src="{% static 'img/spa.png' %}" alt="온천" />
-                     </a>
+                  <div id="spa" class="col p-1">
+                     <div id="bt_img">
+                        <a href="">
+                           <img src="{% static 'img/spa.png' %}" alt="온천" name="온천" />
+                        </a>
+                     </div>
+                     <div id="Shadow"><img src="{% static 'img/Shadow.png' %}" alt="그림자" /></div>
                   </div>
                   <!-- 찜질방 -->
-                  <div id="sauna" class="col position-absolute p-1">
-                     <a href="">
-                        <img src="{% static 'img/sauna.png' %}" alt="찜질방" />
-                     </a>
+                  <div id="sauna" class="col p-1">
+                     <div id="bt_img">
+                        <a href="">
+                           <img src="{% static 'img/sauna.png' %}" alt="찜질방" name="찜질방" />
+                        </a>
+                     </div>
+                     <div id="Shadow"><img src="{% static 'img/Shadow.png' %}" alt="그림자" /></div>
                   </div>
                </div>
             </section>
@@ -64,6 +100,7 @@
             <footer></footer>
          </section>
       </section>
+      <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+      <script src="{% static 'js/main/main.js' %}"></script>
    </body>
-   <script src="{% static 'js/main/main.js' %}"></script>
 </html>
