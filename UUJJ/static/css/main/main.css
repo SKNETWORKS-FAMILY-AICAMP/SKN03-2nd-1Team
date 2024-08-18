@@ -1,5 +1,110 @@
-h1{
-    color: red;
-    font-size: 50px;
-    text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jua&family=Telex&display=swap");
+/* 폰트 전역 설정 */
+body {
+   font-family: "Jua", sans-serif;
+   font-style: normal;
+   background: #FFE5E5 !important;
+   font-size: 1.5em;
+
+}
+/* 전체 크기, 배경 효과 */
+#all-section {
+   width: 100vw;
+   height: 100vh;
+   background-size: cover;
+   background-position: center;
+}
+/* 각 컨텐츠 크기 */
+/* 머리15 몸통70 카드5 발10 */
+header {
+   height: 10vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+} 
+
+#main_con {
+   height: 70vh;
+}
+footer {
+   height: 10vh;
+}
+
+#card {
+   width: 20vw;
+   height: 5vh;
+}
+#card {
+   background-color: rgba(00, 00, 00, 50%);
+   color: #eeeeee;
+}
+
+/* 로고/홈 버튼 */
+#logo img {
+   width: 5vw;
+}
+
+/* 버튼 영역 및 호버 */
+#bt_area {
+   width: 820px;
+   height: 700px;
+   margin-top: 5vh;
+   position: relative;
+}
+
+
+#bt_area > div {
+   transition: transform 0.4s ease;
+   width: 150px;
+   height: 150px;
+}
+
+/* 호버 */
+#bt_area > div:hover {
+   transform: translateY(-30px);
+}
+
+
+/* div 위치*/
+#Arboretum {
+   z-index: 4;
+   left: 25%;
+   top: 25%;
+}
+#gallery {
+   z-index: 3;
+   left: 50%;
+   top: 10%;
+}
+#spa {
+   z-index: 2;
+   left: 0%;
+   top: 10%;
+}
+#sauna {
+   z-index: 1;
+   top: -5%;
+   left: 25%;
+}
+
+
+#Arboretum > a > img {
+   width: 400px;
+   height: 493px;
+   cursor: pointer;
+}
+#gallery > a > img {
+   width: 400px;
+   height: 493px;
+   cursor: pointer;
+}
+#spa > a > img {
+   width: 400px;
+   height: 493px;
+   cursor: pointer;
+}
+#sauna > a > img {
+   width: 400px;
+   height: 493px;
+   cursor: pointer;
 }
