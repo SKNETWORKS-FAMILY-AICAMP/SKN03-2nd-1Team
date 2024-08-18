@@ -1,16 +1,20 @@
 import pymysql
 import pandas as pd
 import os
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
 
 def db_connect():
     # 데이터베이스 연결 설정
     con = pymysql.connect(
-        host='uujj-database.cd4ssucikeao.ap-northeast-2.rds.amazonaws.com', 
-        user='admin', 
-        password='Dbdbwkwjr1234',
-        db='UUJJ', 
+        host=os.getenv('DB_HOST'),
+        user=os.getenv('DB_USER'),
+        password=os.getenv('DB_PASSWORD'),
+        db=os.getenv('DB_NAME'),
+        port=int(os.getenv('DB_PORT', '3306')),  # 기본값 3306
         charset='utf8'
-        
     )
     # DictCursor를 사용하여 커서 생성
     cur = con.cursor(pymysql.cursors.DictCursor)
@@ -78,16 +82,3 @@ def only_city_list(top_5_spa, top_5_arboretum, top_5_sauna, top_5_gallery):
     
     return spa_city_list, arboretum_city_list, sauna_city_list, gallery_city_list
 
-
-# # 결과 출력
-# top_5_spa_list, top_5_arboretum_list, top_5_sauna_list, top_5_gallery_list = top5()
-
-# # 도시 이름 리스트만 추출
-# spa_city_list, arboretum_city_list, sauna_city_list, gallery_city_list = only_city_list(
-#     top_5_spa_list, top_5_arboretum_list, top_5_sauna_list, top_5_gallery_list
-# )
-
-# print("Spa Cities:", spa_city_list)
-# print("Arboretum Cities:", arboretum_city_list)
-# print("Sauna Cities:", sauna_city_list)
-# print("Gallery Cities:", gallery_city_list)
