@@ -1,37 +1,98 @@
+
+
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jua&family=Telex&display=swap");
-
-/* Global settings */
-body,
-html {
-   margin: 0;
-   padding: 0;
-   font-family: "Jua", sans-serif !important;
-   height: 100%;
-   overflow: hidden;
+/* 폰트 전역 설정 */
+body {
+   font-family: "Jua", sans-serif;
    font-style: normal;
-   max-width: 1440px;
+   background: #F8E8AD !important;
+
+   font-size: 1.3em;
 }
 
-/* Header styles */
+/* 전체 크기, 배경 효과 */
+#all-section {
+   width: 100vw;
+   height: 100vh;
+   background-size: 100%;
+   background-position: bottom;
+   background-repeat: no-repeat;
+   /* background-position: center; */
+   background-image: url(../../img/background.png);
+}
+
+#middle_section {
+   height: 100vh;
+}
+
+/* 각 컨텐츠 크기 */
+/* 머리15 몸통70 카드5 발10 */
 header {
-   height: 10vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   height: 15vh;
 }
-
-#logo img {
-   width: 15vw;
-}
-
-/* Main content styles */
 #main_con {
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   height: 70vh;
 }
+footer {
+   height: 10vh;
+}
+
+#header-content {
+   width: 50vw;
+   max-width: 1360px;
+   position: relative;
+}
+#Ranking_board {
+   height: 50vh;
+}
+#Ranking_bt {
+   height: 20vh;
+}
+#menu_nav {
+   position: absolute;
+   margin-top: 3vh;
+}
+#menu_nav img {
+   height: 5vh;
+}
+#offcanvasWithBothOptions {
+   background-color: #fff3a8;
+}
+#menu_bt {
+   height: 20vh;
+}
+
+/* 로고/홈 버튼 */
+#logo {
+   margin-top: 2vh;
+}
+#logo img {
+   width: 5vw;
+}
+
+/* 보드 영역 */
+#card_title {
+   width: 25vw;
+   height: 5vh;
+   background-color: rgba(00, 00, 00, 50%);
+   color: #eeeeee;
+}
+
+#board_area {
+   width: 50vw;
+   max-width: 1360px;
+   height: 50vh;
+   background-color: #00000040;
+   font-size: 0.6em;
+   scrollbar-width: none;
+   overflow-x: auto; 
+   overflow-y: hidden;
+   cursor: grab;
+   white-space: nowrap; 
+   border-radius: 15px;
+   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Map container */
 #map-container {
@@ -45,12 +106,6 @@ header {
    border-radius: 15px;
 }
 
-#map-desc {
-   color: #eeeeee;
-   font-size: 1.5em;
-   margin: 20px;
-}
-
 /* Map styles */
 #map {
    width: 60%;
@@ -61,53 +116,54 @@ header {
    transform: scaleX(1.3);
 }
 
-/* Button group */
-#bts {
+
+#board_area.active {
+   cursor: grabbing; /* 드래그 중일 때의 커서 표시 */
+}
+#board_content {
    display: flex;
-   height: 20vh;
-   justify-content: center;
-   align-items: center;
-   padding: 20px;
 }
-
-/* Button images */
-#bts img {
-   margin: 0 30px;
-   width: 230px;
-   height: 282px;
-   cursor: pointer;
-   transition: transform 0.2s;
+#board_item {
+   display: inline-block; /* 각 아이템들이 인라인 블록처럼 표시되도록 */
+   /* 아이템 간의 간격 조정 */
+   padding: 1em;
+   /* margin: 1em; */
 }
-
-#bts img:hover {
-   transform: scale(1.2);
+#board_card {
+   user-select: none; /* 텍스트 선택을 비활성화 */
+   width: 190px;
+   height: 100%;
 }
-
-/* Bottom line */
-#bt_line {
-   height: 5vh;
+#board_card > a {
+   padding: 10%;
+}
+/* 버튼 영역 및 호버 */
+#bt_area {
+   max-width: 1360px;
    position: relative;
 }
-
-#bt_line::after {
-   content: "";
-   display: block;
-   width: 1200px;
-   height: 6px;
-   background-color: #7c7372;
-   position: absolute;
-   bottom: 0;
-   left: 50%;
-   transform: translateX(-50%);
-   border-radius: 3px;
+#bt_area > div {
+   transition: transform 0.6s ease;
+   position: relative;
 }
-
-/* Footer styles */
-footer {
-   height: 5vh;
-   color: #7c7372;
-   padding: 10px 30px;
-   text-align: center;
-   display: flex;
-   align-items: center;
+#bt_img {
+   position: absolute;
+   z-index: 2;
+}
+#bt_img a {
+   height: 25vh;
+}
+#shadow {
+   position: absolute;
+   z-index: 1;
+}
+/* 호버 */
+#bt_area > div:hover {
+   transform: translateY(-20px);
+}
+#bt_img img {
+   height: inherit;
+}
+#Shadow > img {
+   height: 25vh;
 }

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollWheelZoom: false,    
         doubleClickZoom: false,   
         touchZoom: false          
-    }).setView([37.5665, 127.12], 9);
+    }).setView([37.5665, 127.12], 7);
 
     fetch(geojsonUrl)
         .then(response => response.json())

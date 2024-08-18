@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>MAP</title>
       <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" />
-      <link rel="stylesheet" href="{%static 'css/rank/rank.css'%}" />
+      <link rel="stylesheet" href="{%static 'css/city/city.css'%}" />
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
       <style>
          .leaflet-container {
@@ -46,7 +46,7 @@
                            <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/city/';">
                               <span>지도</span>
                            </button>
-                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/rank/';">
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/city/';">
                               <span>랭킹</span>
                            </button>
                         </div>
@@ -63,7 +63,7 @@
 
             <!-- 가슴 -->
             <section id="main_con" class="row d-flex justify-content-center">
-               <section id="Ranking_board" class="d-flex justify-content-center row">
+               <section id="citying_board" class="d-flex justify-content-center row">
                   <div id="board_title" class="row d-flex justify-content-center">
                      <div id="card_title" class="card shadow-lg d-flex justify-content-center align-items-center">
                         <span id="card-text" class="card-body text-center">가장 많은 장소</span>
@@ -71,12 +71,11 @@
                   </div>
                   <div id="board_area" class="row">
                      <div id="map-container">
-                        <div id="map-desc">나의 유유자적하고픈 장소가 많은 곳은?</div>
                         <div id="map"></div>
                      </div>
                   </div>
                </section>
-               <section id="Ranking_bt" class="d-flex justify-content-center align-items-end">
+               <section id="citying_bt" class="d-flex justify-content-center align-items-end">
                   <!-- 버튼 영역 -->
                   <div id="bt_area" class="row">
                      <!-- 수목원 -->
@@ -132,7 +131,7 @@
          </section>
       </section>
       <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-      <script src="{% static 'js/rank/rank.js' %}"></script>
+      <script src="{% static 'js/city/city.js' %}"></script>
    </body>
    <!-- Bootstrap Bundle with Popper -->
 </html>
