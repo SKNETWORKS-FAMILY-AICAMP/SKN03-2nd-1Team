@@ -3,7 +3,6 @@
 body {
    font-family: "Jua", sans-serif;
    font-style: normal;
-   background: #fff3a8 !important;
    font-size: 1.3em;
 }
 /* 전체 크기, 배경 효과 */
@@ -17,7 +16,6 @@ body {
    background-image: url(../../img/background.png);
 }
 #middle_section {
-   background-color: rgba(100, 100, 100, 0.2);
    height: 100vh;
 }
 /* 각 컨텐츠 크기 */
