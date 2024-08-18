@@ -12,37 +12,47 @@ document.addEventListener('DOMContentLoaded', function() {
     var seoulLayer;
     var currentMarkers = [];
 
-    // 아이콘 설정 함수 수정
-    function createIcon(iconUrl, size) {
-        return L.icon({
-            iconUrl: iconUrl,
-            iconSize: [size, size],
-            iconAnchor: [size/2, size/2],
-            popupAnchor: [0, -size/2]
-        });
-    }
+    // 아이콘 설정
+    var icons = {
+        arboretum: L.icon({
+            iconUrl: '/static/img/arboretum.png',
+            // iconUrl: '/static/img/arboretum_icon.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16],
+            popupAnchor: [0, -16]
+        }),
+        gallery: L.icon({
+            iconUrl: '/static/img/gallery.png',
+            // iconUrl: '/static/img/arboretum_icon.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16],
+            popupAnchor: [0, -16]
+        }),
+        spa: L.icon({
+            iconUrl: '/static/img/spa.png',
+            // iconUrl: '/static/img/arboretum_icon.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16],
+            popupAnchor: [0, -16]
+        }),
+        sauna: L.icon({
+            iconUrl: '/static/img/sauna.png',
+            // iconUrl: '/static/img/arboretum_icon.png',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16],
+            popupAnchor: [0, -16]
+        })
+    };
 
-    // 리뷰 개수에 따른 아이콘 크기 계산 함수
-    function calculateIconSize(reviewCount, minCount, maxCount) {
-        var minSize = 24;
-        var maxSize = 48;
-        var size = minSize + (reviewCount - minCount) / (maxCount - minCount) * (maxSize - minSize);
-        return Math.max(minSize, Math.min(maxSize, size));
-    }
-
-    // 도시 리스트에 따른 마커 추가 함수 수정
-    function addMarkers(cityList, iconType, reviewCounts) {
-        clearMarkers();
-        var minCount = Math.min(...reviewCounts);
-        var maxCount = Math.max(...reviewCounts);
-        
-        cityList.forEach(function(cityName, index) {
+    // 도시 리스트에 따른 마커 추가 함수
+    function addMarkers(cityList, iconType) {
+        clearMarkers(); // 기존 마커 제거
+        cityList.forEach(function(cityName) {
+            // 각 도시의 좌표를 얻고 마커를 추가합니다.
             var cityLayer = getLayerByCityName(cityName);
             if (cityLayer) {
                 var cityCenter = cityLayer.getBounds().getCenter();
-                var iconSize = calculateIconSize(reviewCounts[index], minCount, maxCount);
-                var icon = createIcon('/static/img/' + iconType + '.png', iconSize);
-                var marker = L.marker(cityCenter, {icon: icon}).addTo(map);
+                var marker = L.marker(cityCenter, {icon: icons[iconType]}).addTo(map);
                 currentMarkers.push(marker);
             }
         });
@@ -86,29 +96,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }).addTo(map);
 
-            // 버튼 클릭 이벤트 수정
+            // 버튼 클릭 이벤트
             document.querySelector('#arboretum a').addEventListener('click', function(event) {
                 event.preventDefault();
-                var reviewCounts = [top5_arboretum[0][1], top5_arboretum[1][1], top5_arboretum[2][1], top5_arboretum[3][1], top5_arboretum[4][1]];
-                addMarkers(arboretumCityList, 'arboretum', reviewCounts);
+                addMarkers(arboretumCityList, 'arboretum');
             });
 
             document.querySelector('#gallery a').addEventListener('click', function(event) {
                 event.preventDefault();
-                var reviewCounts = [top5_gallery[0][1], top5_gallery[1][1], top5_gallery[2][1], top5_gallery[3][1], top5_gallery[4][1]];
-                addMarkers(galleryCityList, 'gallery', reviewCounts);
+                addMarkers(galleryCityList, 'gallery');
             });
 
             document.querySelector('#spa a').addEventListener('click', function(event) {
                 event.preventDefault();
-                var reviewCounts = [top5_spa[0][1], top5_spa[1][1], top5_spa[2][1], top5_spa[3][1], top5_spa[4][1]];
-                addMarkers(spaCityList, 'spa', reviewCounts);
+                addMarkers(spaCityList, 'spa');
             });
 
             document.querySelector('#sauna a').addEventListener('click', function(event) {
                 event.preventDefault();
-                var reviewCounts = [top5_sauna[0][1], top5_sauna[1][1], top5_sauna[2][1], top5_sauna[3][1], top5_sauna[4][1]];
-                addMarkers(saunaCityList, 'sauna', reviewCounts);
+                addMarkers(saunaCityList, 'sauna');
             });
         })
         .catch(error => console.error('GeoJSON 로딩 에러:', error));

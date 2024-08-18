@@ -1,6 +1,6 @@
 import pymysql
 import pandas as pd
-import numpy as np
+import os
 
 def db_connect():
     # 데이터베이스 연결 설정
@@ -10,6 +10,7 @@ def db_connect():
         password='Dbdbwkwjr1234',
         db='UUJJ', 
         charset='utf8'
+        
     )
     # DictCursor를 사용하여 커서 생성
     cur = con.cursor(pymysql.cursors.DictCursor)
