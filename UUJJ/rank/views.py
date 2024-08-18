@@ -12,7 +12,7 @@ def rank(request, category='CA00'):
     places = PlaceTb.objects.filter(category_cd__code=category).order_by('-review_num')[:10]
 
     ranked_places = [
-        {'rank': idx + 1, 'name': place.name, 'address': place.address}
+        {'rank': idx + 1, 'name': place.name, 'address': place.address, 'url':place.map_url }
         for idx, place in enumerate(places)
     ]
 

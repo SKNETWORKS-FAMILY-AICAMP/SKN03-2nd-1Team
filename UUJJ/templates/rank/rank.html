@@ -1,66 +1,146 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/rank/rank.css' %}">
-    <script src="https://kit.fontawesome.com/331ae98b90.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <nav class="navbar">
-        <div class="icon" onclick="loadContent('CA00')">
-            <i class="fa-solid fa-hot-tub-person"></i>온천
-        </div>
-        <div class="icon" onclick="loadContent('CA01')">
-            <i class="fa-solid fa-tree"></i> 수목원
-        </div>
-        <div class="icon" onclick="loadContent('CA03')">
-            <i class="fa-solid fa-paint-brush"></i> 미술관
-        </div>
-        <div class="icon" onclick="loadContent('CA02')">
-            <i class="fa-solid fa-egg"></i> 사우나
-        </div>
-    </nav>
+{% load static %}
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Rank</title>
+      <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+      <link rel="stylesheet" href="{% static 'css/rank/rank.css' %}" />
+   </head>
+   <body>
+      <!-- 전체 크기 잡기 -->
+      <section id="all-section">
+         <!-- 중간 정렬 -->
+         <section id="middle_section">
+            <!-- 머리 -->
+            <header class="d-flex justify-content-center">
+               <div id="header-content">
+                  <!-- 메뉴 버튼 -->
+                  <div id="menu_nav">
+                     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <img src="{% static 'img/menu.png' %}" alt="메뉴버튼" />
+                     </button>
+                  </div>
+                  <!-- 숨김 메뉴 -->
+                  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                     <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">메뉴</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                     </div>
+                     <div class="offcanvas-body d-flex justify-content-start">
+                        <div id="menu_bt" class="row">
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/';">
+                              <span>홈</span>
+                           </button>
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/city/';">
+                              <span>지도</span>
+                           </button>
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/rank/';">
+                              <span>랭킹</span>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- 로고 -->
+                  <div id="logo" class="d-flex justify-content-center">
+                     <a href="">
+                        <img src="{% static 'img/logo.png' %}" alt="logo" />
+                     </a>
+                  </div>
+               </div>
+            </header>
 
-    <main id="main-content">
-        <!-- 내용이 동적으로 로드될 곳 -->
-        <section id="{{ category }}" class="content">
-            <article>
-                <h2>수도권 {{ category_name }} Top 10</h2>
-                <div class="content-container">
-                    {% for i in places %}
-                        <table>
-                            <tr>
-                                <td class="rank">{{ i.rank }}</td>
-                                <td class="name">{{ i.name }}</td>
-                                <td class="address">{{ i.address }}</td>
-                            </tr>
-                        </table>
-                    {% endfor %}
+            <!-- 가슴 -->
+            <section id="main_con" class="row d-flex justify-content-center">
+                <section id="Ranking_board" class="d-flex justify-content-center row">
+                    <div id="board_title" class="row d-flex justify-content-center">
+                        <div id="card_title" class="card shadow-lg d-flex justify-content-center align-items-center">
+                            <span id="card-text" class="card-body text-center">수도권 {{ category_name }} TOP 10</span>
+                        </div>
+                    </div>
+                    <div id="board_area" class="row">
+                        <div id="board_content">
+                            {% for place in places %}
+                            <div id="board_item">
+                                <!-- 카드 생성 -->
+                                <div id="board_card" class="card col">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ place.rank }} </h5> <!-- 순위 -->
+                                        <p class="card-text">{{ place.name }}</p>  <!-- 장소 이름 -->
+                                    </div>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">{{ place.address }}</li> <!-- 주소 -->
+                                        <li class="list-group-item">입장료</li>
+                                        <li class="list-group-item">운영시간</li>
+                                    </ul>
+                                    <div class="card-body">
+                                        <a href="{{ place.url }}" class="card-link" target="_blank">홈페이지</a>
+                                        <a href="#" class="card-link">네이버 지도</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </section>
+            
+            <section id="Ranking_bt" class="d-flex justify-content-center align-items-end">
+                <!-- 버튼 영역 -->
+                <div id="bt_area" class="row">
+                    <!-- 수목원 -->
+                    <div id="Arboretum" class="col p-1" onclick="loadContent('CA01')">
+                        <div id="bt_img">
+                            <a href="javascript:void(0);">
+                                <img src="{% static 'img/Arboretum.png' %}" alt="수목원" name="수목원" />
+                            </a>
+                        </div>
+                        <div id="Shadow">
+                            <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                        </div>
+                    </div>
+                    <!-- 미술관 -->
+                    <div id="gallery" class="col p-1" onclick="loadContent('CA03')">
+                        <div id="bt_img">
+                            <a href="javascript:void(0);">
+                                <img src="{% static 'img/gallery.png' %}" alt="미술관" name="미술관" />
+                            </a>
+                        </div>
+                        <div id="Shadow">
+                            <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                        </div>
+                    </div>
+                    <!-- 온천 -->
+                    <div id="spa" class="col p-1" onclick="loadContent('CA00')">
+                        <div id="bt_img">
+                            <a href="javascript:void(0);">
+                                <img src="{% static 'img/spa.png' %}" alt="온천" name="온천" />
+                            </a>
+                        </div>
+                        <div id="Shadow">
+                            <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                        </div>
+                    </div>
+                    <!-- 찜질방 -->
+                    <div id="sauna" class="col p-1" onclick="loadContent('CA02')">
+                        <div id="bt_img">
+                            <a href="javascript:void(0);">
+                                <img src="{% static 'img/sauna.png' %}" alt="찜질방" name="찜질방" />
+                            </a>
+                        </div>
+                        <div id="Shadow">
+                            <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                        </div>
+                    </div>
                 </div>
-            </article>
-        </section>
-    </main>
-
-    <script>
-        function loadContent(category) {
-            fetch(`/rank/${category}/`)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('main-content').innerHTML = data;
-                    document.querySelectorAll('.content').forEach(function(content) {
-                        content.classList.remove('active');
-                    });
-                    document.getElementById(category).classList.add('active');
-                })
-                .catch(error => console.error('Error:', error));
-        }
-
-        // 페이지 로드 시 기본 콘텐츠를 로드합니다.
-        document.addEventListener('DOMContentLoaded', function() {
-            loadContent('{{ category }}');  // 기본 카테고리로 기본 콘텐츠 로드
-        });
-    </script>
-</body>
+            </section>
+            
+            <!-- 발 -->
+            <footer>곰발바닥</footer>
+         </section>
+      </section>
+      <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+      <script src="{% static 'js/rank/rank.js' %}"></script>
+   </body>
 </html>

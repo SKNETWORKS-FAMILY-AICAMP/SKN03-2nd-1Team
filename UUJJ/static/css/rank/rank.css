@@ -1,98 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jua&family=Telex&display=swap");
+/* 폰트 전역 설정 */
 body {
-    margin: 0;
-    display: flex;
+   font-family: "Jua", sans-serif;
+   font-style: normal;
+   background: #F8E8AD !important;
+   font-size: 1.3em;
+}
+/* 전체 크기, 배경 효과 */
+#all-section {
+   width: 100vw;
+   height: 100vh;
+   background-size: 100%;
+   background-position: bottom;
+   background-repeat: no-repeat;
+   /* background-position: center; */
+   background-image: url(../../img/background.png);
+}
+#middle_section {
+   height: 100vh;
+}
+/* 각 컨텐츠 크기 */
+/* 머리15 몸통70 카드5 발10 */
+header {
+   height: 15vh;
+}
+#main_con {
+   height: 70vh;
+}
+footer {
+   height: 10vh;
+}
+#header-content {
+   width: 50vw;
+   max-width: 1360px;
+   position: relative;
+}
+#Ranking_board {
+   height: 50vh;
+}
+#Ranking_bt {
+   height: 20vh;
+}
+#menu_nav {
+   position: absolute;
+   margin-top: 3vh;
+}
+#menu_nav img {
+   height: 5vh;
+}
+#offcanvasWithBothOptions {
+   background-color: #fff3a8;
+}
+#menu_bt {
+   height: 20vh;
 }
 
-/* 내용 & 스크롤 */
-.content-container {
-    width: auto;
-    height: 200px;
-    overflow: auto;
-    background-color: rgb(245, 246, 248);
+/* 로고/홈 버튼 */
+#logo {
+   margin-top: 2vh;
 }
-.content-container::-webkit-scrollbar {
-    width: 10px;
-}
-.content-container::-webkit-scrollbar-thumb {
-    background-color: rgb(119, 114, 136);
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid transparent;
-}
-.content-container::-webkit-scrollbar-track {
-    background-color: rgb(220, 223, 226);
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px white;
+#logo img {
+   width: 5vw;
 }
 
-main {
-    margin-left: 135px; /* 네비게이션 바의 너비 + 간격 */
-    padding: 30px;
-    flex-grow: 1;
-    margin-right: 20px; /* 오른쪽 여백 */
-    margin-bottom: 20px; /* 하단 여백 */
+/* 보드 영역 */
+#card_title {
+   width: 25vw;
+   height: 5vh;
+   background-color: rgba(00, 00, 00, 50%);
+   color: #eeeeee;
+}
+#board_area {
+   width: 50vw;
+   max-width: 1360px;
+   height: 40vh;
+   background-color: #00000040;
+   font-size: 0.6em;
+   scrollbar-width: none;
+   overflow-x: auto; /* 수평 스크롤 활성화 */
+   overflow-y: hidden; /* 수직 스크롤 비활성화 */
+   cursor: grab; /* 드래그 가능한 커서 표시 */
+   white-space: nowrap; /* 아이템들이 줄바꿈되지 않고 한 줄로 표시되도록 */
+   border-radius: 15px;
+   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+#board_area.active {
+   cursor: grabbing; /* 드래그 중일 때의 커서 표시 */
+}
+#board_content {
+   display: flex;
+}
+#board_item {
+   display: inline-block; /* 각 아이템들이 인라인 블록처럼 표시되도록 */
+   /* 아이템 간의 간격 조정 */
+   padding: 1em;
+   /* margin: 1em; */
+}
+#board_card {
+   user-select: none; /* 텍스트 선택을 비활성화 */
+   width: 190px;
+   height: 100%;
+}
+#board_card > a {
+   padding: 10%;
 }
 
-
-/* 테이블 전체 스타일 */
-.table {
-    width: 100%; /* 테이블의 너비를 100%로 설정 */
-    border-collapse: collapse; /* 테이블 셀의 경계가 겹치지 않도록 설정 */
+/* 버튼 영역 및 호버 */
+#bt_area {
+   max-width: 1360px;
+   position: relative;
 }
-.rank {
-    text-align: center; /* 중앙 정렬 */
-    padding-top: 15px;
-    width: 30px;
+#bt_area > div {
+   transition: transform 0.6s ease;
+   position: relative; 
 }
-.name {
-    text-align: center; /* 중앙 정렬 */
-    width: 250px;
-    padding-top: 15px;
+#bt_img {
+   position: absolute;
+   z-index: 2;
 }
-.address {
-    text-align: left; /* 중앙 정렬 */
-    width: auto;
-    padding-top: 15px;
+#bt_img a {
+   height: 25vh;
 }
-
-
-nav {
-    background-color: rgb(173, 173, 179);
-    padding: 60px 20px; 
-    text-align: center;
-    width: 120px; /* 네비게이션 바의 너비 고정 */
-    height: 100vh; /* 화면 전체 높이 */
-    position: fixed; 
-    /* 화면의 왼쪽에 고정 */
-    left: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    /* align-items: flex-start; */
-
+#shadow {
+   position: absolute;
+   z-index: 1;
 }
-/* 네비게이션바 */
-.icon {
-    cursor: pointer;
-    padding: 15px;
-    /* border: 1px solid #ccc; */
-    margin: 5px 0;
-    display: flex;
-    align-items: center;
+/* 호버 */
+#bt_area > div:hover {
+   transform: translateY(-20px);
 }
-.icon i {
-    margin-right: 8px;
-}
-/* 반응 */
-.icon:hover {
-    background-color: rgb(220, 223, 226);
-    border-radius: 7px;
-}
-
-.content {
-    display: none;
-}
-
-.active {
-    display: block;
+#bt_img img {
+   height: inherit;
+} 
+#Shadow > img {
+   height: 25vh;
 }
 
