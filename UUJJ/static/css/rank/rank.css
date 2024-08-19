@@ -2,28 +2,153 @@
 /* 폰트 전역 설정 */
 body {
    font-family: "Jua", sans-serif;
-   font-weight: 500;
    font-style: normal;
+   background: #f8e8ad !important;
+   font-size: 1.3em;
 }
 /* 전체 크기, 배경 효과 */
 #all-section {
    width: 100vw;
    height: 100vh;
-   background-size: cover;
-   background-position: center;
+   background-size: 100%;
+   background-position: bottom;
+   background-repeat: no-repeat;
+   /* background-position: center; */
    background-image: url(../../img/background.png);
 }
 #middle_section {
-   background-color: rgba(00, 00, 00, 50%);
+   height: 100vh;
 }
 /* 각 컨텐츠 크기 */
 /* 머리15 몸통70 카드5 발10 */
 header {
-   height: 15vh;
+   height: 10vh;
 }
 #main_con {
-   height: 70vh;
+   height: 60vh;
 }
 footer {
    height: 10vh;
 }
+#header-content {
+   width: 70vw;
+   max-width: 1700px;
+   position: relative;
+}
+#Ranking_board {
+   height: 50vh;
+}
+#Ranking_bt {
+   height: 20vh;
+}
+#menu_nav {
+   position: absolute;
+   margin-top: 3vh;
+}
+#menu_nav img {
+   height: 5vh;
+}
+#offcanvasWithBothOptions {
+   background-color: #fff3a8;
+}
+#menu_bt {
+   height: 20vh;
+   width: 100%;
+}
+/* 로고/홈 버튼 */
+#logo {
+   margin-top: 2vh;
+}
+#logo img {
+   width: 5vw;
+}
+
+#card_title {
+   width: 25vw;
+   height: 5vh;
+   background-color: rgba(00, 00, 00, 50%);
+   color: #eeeeee;
+}
+#board_area {
+   width: 50vw;
+   max-width: 1360px;
+   height: 40vh;
+   background-color: #00000040;
+   font-size: 0.6em;
+   scrollbar-width: none;
+   overflow-x: auto; 
+   overflow-y: hidden;
+   cursor: grab; 
+   white-space: nowrap; 
+   border-radius: 15px;
+   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#board_area.active {
+   cursor: grabbing; 
+}
+
+#board_content {
+   display: flex;
+}
+
+#board_item {
+   display: inline-block; 
+   padding: 0.8em;
+}
+
+#board_card {
+   user-select: none; 
+   width: 190px;
+   height: 100%;
+   overflow : hidden;
+}
+
+#board_card > a {
+   padding: 10%;
+}
+
+#board_card > div:nth-child(-n+10) > img {
+   width: 155px;
+   height: 155px;
+   object-fit: cover;
+}
+
+#board_card > div > p > a {
+   font-size: 1rem;
+}
+
+#board_card > div > p{
+   margin : 0;
+}
+/* 버튼 영역 및 호버 */
+#bt_area {
+   max-width: 1360px;
+   position: relative;
+}
+#bt_area > div {
+   transition: transform 0.6s ease;
+   position: relative; 
+}
+#bt_img {
+   position: absolute;
+   z-index: 2;
+}
+#bt_img a {
+   height: 23vh;
+}
+#shadow {
+   position: absolute;
+   z-index: 1;
+}
+/* 호버 */
+#bt_area > div:hover {
+   transform: translateY(-20px);
+}
+#bt_img img {
+   height: inherit;
+} 
+#Shadow > img {
+   height: 23vh;
+}
+

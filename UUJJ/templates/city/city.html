@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>MAP</title>
-      {% load static %}
-      <link rel="stylesheet" href="{% static 'css/city/city.css'%}" />
       <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}" />
+      <link rel="stylesheet" href="{%static 'css/city/city.css'%}" />
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
       <style>
          .leaflet-container {
@@ -16,65 +16,132 @@
             display: none;
          }
       </style>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-      <script src="{% static 'js/city/city.js' %}"></script>
    </head>
-
    <body>
+      <script>
+         var spaCityList = {{ spa_city_list | safe }};
+         var arboretumCityList = {{ arboretum_city_list | safe }};
+         var saunaCityList = {{ sauna_city_list | safe }};
+         var galleryCityList = {{ gallery_city_list | safe }};
+
+         var top5_spa = {{ top5_spa | safe }};
+         var top5_arboretum = {{ top5_arboretum | safe }};
+         var top5_sauna = {{ top5_sauna | safe }};
+         var top5_gallery = {{ top5_gallery | safe }};
+      </script>
       <!-- 전체 크기 잡기 -->
-      <section id="all-section" class="container-fluid">
+      <section id="all-section">
          <!-- 중간 정렬 -->
          <section id="middle_section">
             <!-- 머리 -->
-            <header>
-               <div class="d-flex justify-content-center">
-                  <div id="logo">
-                     <a href="">
-                        <img src="{% static 'img/logo.png' %}" alt="logo" />
+            <header class="d-flex justify-content-center">
+               <div id="header-content">
+                  <!-- 메뉴 버튼 -->
+                  <div id="menu_nav">
+                     <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <img src="{%static 'img/menu.png'%}" alt="메뉴버튼" />
+                     </button>
+                  </div>
+                  <!-- 숨김 메뉴 -->
+                  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                     <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">메뉴</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                     </div>
+                     <div class="offcanvas-body d-flex justify-content-start">
+                        <div id="menu_bt" class="row">
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/';">
+                              <span>홈</span>
+                           </button>
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/city/';">
+                              <span>지도</span>
+                           </button>
+                           <button class="btn" type="button" onclick="window.location.href='http://127.0.0.1:8000/rank/';">
+                              <span>랭킹</span>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- 로고 -->
+                  <div id="logo" class="d-flex justify-content-center">
+                     <a href="http://127.0.0.1:8000/">
+                        <img src="{%static 'img/logo.png'%}" alt="logo" />
                      </a>
                   </div>
                </div>
             </header>
+
             <!-- 가슴 -->
-            <section id="main_con">
-               <div id="map-container">
-                  <div id = "map-desc">나의 유유자적하고픈 장소가 많은 곳은?</div>
-                  <div id="map"></div>
-               </div>
-               <div id="bt_area">
-                  <div id="bts">
-                     <!-- 수목원 -->
-                     <div id="arboretum">
-                        <a href="">
-                           <img src="{% static 'img/arboretum.png' %}" alt="Arboretum" />
-                        </a>
-                     </div>
-                     <!-- 미술관 -->
-                     <div id="gallery">
-                        <a href="">
-                           <img src="{% static 'img/gallery.png' %}" alt="Art Gallery" />
-                        </a>
-                     </div>
-                     <!-- 온천 -->
-                     <div id="spa">
-                        <a href="">
-                           <img src="{% static 'img/spa.png' %}" alt="Hot Springs" />
-                        </a>
-                     </div>
-                     <!-- 찜질방 -->
-                     <div id="sauna">
-                        <a href="">
-                           <img src="{% static 'img/sauna.png' %}" alt="Sauna" />
-                        </a>
+            <section id="main_con" class="row d-flex justify-content-center">
+               <section id="citying_board" class="d-flex justify-content-center row">
+                  <div id="board_title" class="row d-flex justify-content-center">
+                     <div id="card_title" class="card shadow-lg d-flex justify-content-center align-items-center">
+                        <span id="card-text" class="card-body text-center">가장 많은 장소</span>
                      </div>
                   </div>
-                  <!-- 라인!! -->
-                  <div id="bt_line"></div>
-               </div>
+                  <div id="board_area" class="row">
+                     <div id="map-container">
+                        <div id="map"></div>
+                     </div>
+                  </div>
+               </section>
+               <section id="citying_bt" class="d-flex justify-content-center align-items-end">
+                  <!-- 버튼 영역 -->
+                  <div id="bt_area" class="row">
+                     <!-- 수목원 -->
+                     <div id="Arboretum" class="col p-1">
+                        <div id="bt_img">
+                           <a href="">
+                              <img src="{% static 'img/Arboretum.png' %}" alt="수목원" name="수목원" />
+                           </a>
+                        </div>
+                        <div id="Shadow">
+                           <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                        </div>
+                     </div>
+                     <!-- 미술관 -->
+                     <div id="gallery" class="col p-1">
+                        <div id="bt_img">
+                           <a href="">
+                              <img src="{% static 'img/gallery.png' %}" alt="미술관" name="미술관" />
+                           </a>
+                        </div>
+                        <div id="Shadow">
+                           <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                        </div>
+                     </div>
+                     <!-- 온천 -->
+                     <div id="spa" class="col p-1">
+                        <div id="bt_img">
+                           <a href="">
+                              <img src="{% static 'img/spa.png' %}" alt="온천" name="온천" />
+                           </a>
+                        </div>
+                        <div id="Shadow">
+                           <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                        </div>
+                     </div>
+                     <!-- 찜질방 -->
+                     <div id="sauna" class="col p-1">
+                        <div id="bt_img">
+                           <a href="">
+                              <img src="{% static 'img/sauna.png' %}" alt="찜질방" name="찜질방" />
+                           </a>
+                        </div>
+                        <div id="Shadow">
+                           <img src="{% static 'img/Shadow.png' %}" alt="그림자" />
+                        </div>
+                     </div>
+                  </div>
+                  <!-- 언더 라인 -->
+               </section>
             </section>
             <!-- 발 -->
             <footer></footer>
          </section>
       </section>
+      <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+      <script src="{% static 'js/city/city.js' %}"></script>
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
    </body>
 </html>

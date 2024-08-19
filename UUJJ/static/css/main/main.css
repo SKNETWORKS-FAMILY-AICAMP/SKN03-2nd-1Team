@@ -3,108 +3,122 @@
 body {
    font-family: "Jua", sans-serif;
    font-style: normal;
-   background: #FFE5E5 !important;
-   font-size: 1.5em;
-
+   background: #f8e8ad !important;
+   font-size: 1.3em;
 }
+
 /* 전체 크기, 배경 효과 */
 #all-section {
    width: 100vw;
    height: 100vh;
-   background-size: cover;
-   background-position: center;
+   background-size: 100%;
+   background-position: bottom;
+   background-repeat: no-repeat;
+   background-image: url(../../img/background.png);
+}
+
+#middle_section {
+   height: 100vh;
 }
 /* 각 컨텐츠 크기 */
-/* 머리15 몸통70 카드5 발10 */
 header {
    height: 10vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-} 
-
+}
 #main_con {
-   height: 70vh;
+   height: 75vh;
 }
 footer {
    height: 10vh;
 }
 
 #card {
-   width: 20vw;
+   width: 25vw;
    height: 5vh;
-}
-#card {
    background-color: rgba(00, 00, 00, 50%);
    color: #eeeeee;
 }
 
-/* 로고/홈 버튼 */
-#logo img {
-   width: 5vw;
-}
-
-/* 버튼 영역 및 호버 */
-#bt_area {
-   width: 820px;
-   height: 700px;
-   margin-top: 5vh;
+/* 헤더 콘텐츠 */
+#header-content {
+   width: 70vw;
+   max-width: 1700px;
    position: relative;
 }
 
-
-#bt_area > div {
-   transition: transform 0.4s ease;
-   width: 150px;
-   height: 150px;
+/* 메뉴 */
+#menu_nav {
+   position: absolute;
+   margin-top: 3vh;
+}
+#menu_nav img {
+   height: 5vh;
+}
+#offcanvasWithBothOptions {
+   background-color: #fff3a8;
+}
+#menu_bt {
+   height: 20vh;
+   width: 100%;
 }
 
+/* 로고/홈 버튼 */
+#logo {
+   margin-top: 2vh;
+}
+#logo img {
+   width: 5vw;
+}
+/* 버튼 영역 및 호버 */
+#bt_area {
+   width: 640px;
+   height: 480px;
+   position: relative;
+}
+#bt_area > div {
+   width: 320px;
+   height: 320px;
+   transition: transform 0.4s ease;
+   position: absolute;
+}
+#bt_img {
+   position: absolute;
+   z-index: 2;
+}
+#bt_img a {
+   height: 35vh;
+}
+#shadow {
+   position: absolute;
+   z-index: 1;
+}
 /* 호버 */
 #bt_area > div:hover {
-   transform: translateY(-30px);
+   transform: translateY(-40px);
+}
+#bt_img img {
+   height: inherit;
+}
+#Shadow > img {
+   height: 35vh;
 }
 
-
-/* div 위치*/
+/* z-index */
 #Arboretum {
    z-index: 4;
-   left: 25%;
-   top: 25%;
+   left: 160px;
+   bottom: 0;
 }
 #gallery {
    z-index: 3;
-   left: 50%;
-   top: 10%;
+   right: 0;
+   bottom: 80px;
 }
 #spa {
    z-index: 2;
-   left: 0%;
-   top: 10%;
+   left: 0;
+   bottom: 85px;
 }
 #sauna {
    z-index: 1;
-   top: -5%;
-   left: 25%;
-}
-
-
-#Arboretum > a > img {
-   width: 400px;
-   height: 493px;
-   cursor: pointer;
-}
-#gallery > a > img {
-   width: 400px;
-   height: 493px;
-   cursor: pointer;
-}
-#spa > a > img {
-   width: 400px;
-   height: 493px;
-   cursor: pointer;
-}
-#sauna > a > img {
-   width: 400px;
-   height: 493px;
-   cursor: pointer;
+   right: 160px;
 }

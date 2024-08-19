@@ -6,5 +6,5 @@ from .views import city_view
 urlpatterns = [
     # localhost
     path('admin/', admin.site.urls),
-    path('',city_view,name="city-city_view")
+    path('',city_view,name="city-city_view"),
 ]
