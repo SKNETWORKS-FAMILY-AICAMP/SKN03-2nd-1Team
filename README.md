@@ -45,14 +45,16 @@ SKN03-2nd-1Team : 유유자적 🍃
 
 >  수도권 힐링 공간의 카테고리(사우나, 온천, 미술관, 수목원)가 모여있는 상위 5개 시(군) 시각화
 > 
-> [ ] 가설 :
-> [ ] 검증 : 
+> [ ❓ ] 가설 : 
+> 
+> [ ❗ ] 검증 : 
 
 **② 힐링 공간의 카테고리별 랭킹 Top 10 제공**
 > 수도권 힐링 공간의 카테고리(사우나, 온천, 미술관, 수목원)별 랭킹 Top 10 정보 제공
 > 
-> [ ] 가설 :
-> [ ] 검증 : 
+> [ ❓ ] 가설 :
+> 
+> [ ❗ ] 검증 : 
 
 <br/>
 
@@ -86,9 +88,23 @@ SKN03-2nd-1Team : 유유자적 🍃
 
 <br/>
 
+### 📌 시스템 아키텍쳐
+![image](https://github.com/user-attachments/assets/83f64e9d-a817-4093-a776-c6252a691e47)
+
+<br/>
+
+### 📌 사이트 플로우차트
+![image](https://github.com/user-attachments/assets/83f64e9d-a817-4093-a776-c6252a691e47)
+
+<br/>
+
 ### 📌 프로젝트 결과 
-| 유유자적 MAIN | 힐링 공간의 카테고리별 스팟 | 힐링 공간의 카테고리별 랭킹 Top 10 |
-|--|--|--|
-| ![image](https://github.com/user-attachments/assets/219c8cb4-8b59-498d-aa8b-bd68f74576e5) | ![image](https://github.com/user-attachments/assets/4196282e-9cef-4081-b376-07139ff8e0d9) | ![image](https://github.com/user-attachments/assets/be1d86b8-cc78-4f55-8d19-4a637a6b779d) |
+| 유유자적 MAIN |
+|:--:|
+| ![image](https://github.com/user-attachments/assets/219c8cb4-8b59-498d-aa8b-bd68f74576e5) | 
+| **힐링 공간의 카테고리별 스팟** | 
+| ![image](https://github.com/user-attachments/assets/4196282e-9cef-4081-b376-07139ff8e0d9) | 
+| **힐링 공간의 카테고리별 랭킹 Top 10** |
+![image](https://github.com/user-attachments/assets/be1d86b8-cc78-4f55-8d19-4a637a6b779d) |
 
 
