@@ -5,10 +5,10 @@ SKN03-2nd-1Team : 유유자적 🍃
 <br/>
 
 ### 📌 팀 멤버
-| 서민정 | 정해린 | 유혜린 | 송명신 |  |
+| 서민정 | 정해린 | 유혜린 | 송명신 | 김병수 |
 |--|--|--|--|--|
 | @seom-j | @junghl11 | @Lerini98 | @SongMyungshin | @BS-KIM-97 |
-| ![image]() | ![image]() | ![image]() | ![image]() | ![image]() |
+| ![유재석](https://github.com/user-attachments/assets/a47b9bda-3ea7-40b5-9671-19b26169efcc) | ![정형돈](https://github.com/user-attachments/assets/f3c6f945-7d91-48db-b7d6-c92451746ea1) | ![박명수](https://github.com/user-attachments/assets/47a14ae0-0841-4c73-bfe8-f1598c679078) | ![정준하](https://github.com/user-attachments/assets/b023c9d2-6244-4027-a9d6-0b34dbc5987b) | ![길](https://github.com/user-attachments/assets/b754408d-361f-4397-9624-74d5518407c4) |
 | Project Leader | Data | Back-end | Back-end | Front-end |
 
 <br/><br/><br/>
@@ -60,3 +60,8 @@ SKN03-2nd-1Team : 유유자적 🍃
 
 ### 📌 프로젝트 결과 
 
+![image](https://github.com/user-attachments/assets/219c8cb4-8b59-498d-aa8b-bd68f74576e5)
+
+![image](https://github.com/user-attachments/assets/4196282e-9cef-4081-b376-07139ff8e0d9)
+
+![image](https://github.com/user-attachments/assets/be1d86b8-cc78-4f55-8d19-4a637a6b779d)
