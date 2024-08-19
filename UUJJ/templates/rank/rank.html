@@ -44,7 +44,7 @@
                   </div>
                   <!-- 로고 -->
                   <div id="logo" class="d-flex justify-content-center">
-                     <a href="">
+                     <a href="http://127.0.0.1:8000/">
                         <img src="{% static 'img/logo.png' %}" alt="logo" />
                      </a>
                   </div>
@@ -70,16 +70,15 @@
                                  <!-- 순위 -->
                                  <p class="card-text">{{ place.name }}</p>
                                  <!-- 장소 이름 -->
+                                 <img src="{{ place.image }}" alt="{{ place.name }}" />
                               </div>
                               <ul class="list-group list-group-flush">
                                  <li class="list-group-item">{{ place.address }}</li>
                                  <!-- 주소 -->
-                                 <li class="list-group-item">입장료</li>
-                                 <li class="list-group-item">운영시간</li>
+                                 <li class="list-group-item">리뷰 {{ place.review_num }}개</li>
                               </ul>
                               <div class="card-body">
-                                 <a href="{{ place.url }}" class="card-link" target="_blank">홈페이지</a>
-                                 <a href="#" class="card-link">네이버 지도</a>
+                                 <a href="{{ place.url }}" class="card-link" target="_blank">상세 정보</a>
                               </div>
                            </div>
                         </div>

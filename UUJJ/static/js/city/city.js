@@ -111,24 +111,32 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             var reviewCounts = [top5_arboretum[0][1], top5_arboretum[1][1], top5_arboretum[2][1], top5_arboretum[3][1], top5_arboretum[4][1]];
             addMarkers(arboretumCityList, "arboretum", reviewCounts);
+         
+            history.pushState(null, null, "/city/arboretum");
          });
 
          document.querySelector("#gallery a").addEventListener("click", function (event) {
             event.preventDefault();
             var reviewCounts = [top5_gallery[0][1], top5_gallery[1][1], top5_gallery[2][1], top5_gallery[3][1], top5_gallery[4][1]];
             addMarkers(galleryCityList, "gallery", reviewCounts);
+         
+            history.pushState(null, null, "/city/gallery");
          });
 
          document.querySelector("#spa a").addEventListener("click", function (event) {
             event.preventDefault();
             var reviewCounts = [top5_spa[0][1], top5_spa[1][1], top5_spa[2][1], top5_spa[3][1], top5_spa[4][1]];
             addMarkers(spaCityList, "spa", reviewCounts);
+
+            history.pushState(null, null, "/city/spa");
          });
 
          document.querySelector("#sauna a").addEventListener("click", function (event) {
             event.preventDefault();
             var reviewCounts = [top5_sauna[0][1], top5_sauna[1][1], top5_sauna[2][1], top5_sauna[3][1], top5_sauna[4][1]];
             addMarkers(saunaCityList, "sauna", reviewCounts);
+
+            history.pushState(null, null, "/city/sauna");
          });
       })
 });
