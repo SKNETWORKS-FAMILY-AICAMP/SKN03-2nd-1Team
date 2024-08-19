@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         marker.bindPopup(cityName);
 
         currentMarkers.push(marker);
+        
       }
     });
   }
@@ -131,7 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
           ];
           addMarkers(arboretumCityList, "arboretum", reviewCounts);
 
-          history.pushState(null, null, "/city/arboretum");
         });
 
       document
@@ -147,7 +147,6 @@ document.addEventListener("DOMContentLoaded", function () {
           ];
           addMarkers(galleryCityList, "gallery", reviewCounts);
 
-          history.pushState(null, null, "/city/gallery");
         });
 
       document
@@ -163,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
           ];
           addMarkers(spaCityList, "spa", reviewCounts);
 
-          history.pushState(null, null, "/city/spa");
         });
 
       document
@@ -179,7 +177,6 @@ document.addEventListener("DOMContentLoaded", function () {
           ];
           addMarkers(saunaCityList, "sauna", reviewCounts);
 
-          history.pushState(null, null, "/city/sauna");
         });
     });
 });
