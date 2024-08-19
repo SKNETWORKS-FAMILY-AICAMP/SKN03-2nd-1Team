@@ -68,18 +68,17 @@
                               <div class="card-body">
                                  <h5 class="card-title">{{ place.rank }}</h5>
                                  <!-- 순위 -->
-                                 <p class="card-text">{{ place.name }}</p>
+                                 <p class="card-text">
+                                    <a href="{{ place.url }}" target="_blank">{{ place.name }}</a>
+                                 </p>                                 
                                  <!-- 장소 이름 -->
-                                 <img src="{{ place.image }}" alt="{{ place.name }}" />
+                                 <img src="{{ place.img_url }}" alt="{{ place.name }}" />
                               </div>
                               <ul class="list-group list-group-flush">
                                  <li class="list-group-item">{{ place.address }}</li>
                                  <!-- 주소 -->
                                  <li class="list-group-item">리뷰 {{ place.review_num }}개</li>
                               </ul>
-                              <div class="card-body">
-                                 <a href="{{ place.url }}" class="card-link" target="_blank">상세 정보</a>
-                              </div>
                            </div>
                         </div>
                         {% endfor %}

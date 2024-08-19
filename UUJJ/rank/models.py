@@ -20,6 +20,7 @@ class PlaceTb(models.Model):
     address = models.CharField(max_length=255)
     review_num = models.IntegerField(blank=True, null=True)
     map_url = models.URLField(blank=True, null=True)
+    img_url = models.URLField(blank=True, null=True)
 
     class Meta:
         managed = False

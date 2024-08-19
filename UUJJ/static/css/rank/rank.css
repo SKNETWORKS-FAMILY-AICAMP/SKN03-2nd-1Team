@@ -83,30 +83,43 @@ footer {
    border-radius: 15px;
    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
 #board_area.active {
    cursor: grabbing; 
 }
+
 #board_content {
    display: flex;
 }
+
 #board_item {
    display: inline-block; 
-   padding: 1em;
+   padding: 0.8em;
 }
+
 #board_card {
    user-select: none; 
    width: 190px;
    height: 100%;
    overflow : hidden;
 }
+
 #board_card > a {
    padding: 10%;
 }
 
-#board_card > img{
-   width: 150px;
-   height: 150px;
+#board_card > div:nth-child(-n+10) > img {
+   width: 155px;
+   height: 155px;
    object-fit: cover;
+}
+
+#board_card > div > p > a {
+   font-size: 1rem;
+}
+
+#board_card > div > p{
+   margin : 0;
 }
 /* 버튼 영역 및 호버 */
 #bt_area {

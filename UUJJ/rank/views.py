@@ -14,7 +14,8 @@ def rank(request, category='CA00'):
     ranked_places = [
         {'rank': idx + 1, 'name': place.name, \
         'address': place.address, 'url':place.map_url, \
-        'review_num' : place.review_num}
+        'review_num' : place.review_num,
+        'img_url': place.img_url}
         for idx, place in enumerate(places)
     ]
 
