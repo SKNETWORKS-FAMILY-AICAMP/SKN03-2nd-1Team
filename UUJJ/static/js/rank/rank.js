@@ -126,7 +126,7 @@ function loadContent(category) {
         .then(response => response.text())
         .then(data => {
             // 콘텐츠를 업데이트
-            document.getElementById('main_con').innerHTML = data;
+            document.getElementById('middle_section').innerHTML = data;
 
             // 버튼의 시각적 상태를 업데이트
             document.querySelectorAll('#bt_area .col').forEach(function(content) {

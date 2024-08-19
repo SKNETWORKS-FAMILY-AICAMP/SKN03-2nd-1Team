@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 {% load static %}
-{% load static %}
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
@@ -62,7 +61,7 @@
                   <!-- 수목원 -->
                   <div id="Arboretum" class="col p-1">
                      <div id="bt_img">
-                        <a href="">
+                        <a href="#" onclick="window.location.href='/rank/CA01';">
                            <img src="{% static 'img/Arboretum.png' %}" alt="수목원" name="수목원" />
                         </a>
                      </div>
@@ -71,7 +70,7 @@
                   <!-- 미술관 -->
                   <div id="gallery" class="col p-1">
                      <div id="bt_img">
-                        <a href="">
+                        <a href="#" onclick="window.location.href='/rank/CA03';">
                            <img src="{% static 'img/gallery.png' %}" alt="미술관" name="미술관" />
                         </a>
                      </div>
@@ -80,7 +79,7 @@
                   <!-- 온천 -->
                   <div id="spa" class="col p-1">
                      <div id="bt_img">
-                        <a href="">
+                        <a href="#" onclick="window.location.href='/rank/CA00';">
                            <img src="{% static 'img/spa.png' %}" alt="온천" name="온천" />
                         </a>
                      </div>
@@ -89,13 +88,12 @@
                   <!-- 찜질방 -->
                   <div id="sauna" class="col p-1">
                      <div id="bt_img">
-                        <a href="">
+                        <a href="#" onclick="window.location.href='/rank/CA02';">
                            <img src="{% static 'img/sauna.png' %}" alt="찜질방" name="찜질방" />
                         </a>
                      </div>
                      <div id="Shadow"><img src="{% static 'img/Shadow.png' %}" alt="그림자" /></div>
                   </div>
-               </div>
             </section>
             <!-- 발 -->
             <footer></footer>
@@ -105,4 +103,3 @@
       <script src="{% static 'js/main/main.js' %}"></script>
    </body>
 </html>
-
