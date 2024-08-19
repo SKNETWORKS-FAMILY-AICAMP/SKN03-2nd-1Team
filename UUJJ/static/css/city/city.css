@@ -51,16 +51,10 @@ footer {
 
 #offcanvasWithBothOptions {
    background-color: #fff3a8;
-   display: flex;
-   justify-content: center;
-   align-items: center; 
 }
-
 #menu_bt {
    height: 20vh;
-   display: flex;
-   justify-content: center;
-   align-items: center; 
+   width: 100%;
 }
 
 /* 맵 컨텐츠 */
