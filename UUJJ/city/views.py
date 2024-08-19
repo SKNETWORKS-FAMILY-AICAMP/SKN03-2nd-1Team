@@ -1,6 +1,6 @@
 from django.shortcuts import render
 # from django.http import HttpResponse
-from .services import top5, only_city_list
+from .models import top5, only_city_list
 import json
 # Create your views here.
 
