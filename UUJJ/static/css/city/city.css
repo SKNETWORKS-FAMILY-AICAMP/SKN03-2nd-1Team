@@ -48,11 +48,13 @@ footer {
 #menu_nav img {
    height: 5vh;
 }
+
 #offcanvasWithBothOptions {
    background-color: #fff3a8;
 }
 #menu_bt {
    height: 20vh;
+   width: 100%;
 }
 
 /* 맵 컨텐츠 */
