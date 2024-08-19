@@ -33,11 +33,11 @@ spa_hover.addEventListener("mouseleave", () => {
    cardText.textContent = "나의 유유자적 하고픈 장소는?";
 });
 
-// 찜질방
+// 사우나
 const sauna_hover = document.getElementById("sauna");
 
 sauna_hover.addEventListener("mouseover", () => {
-   cardText.textContent = "찜질방";
+   cardText.textContent = "사우나";
 });
 
 sauna_hover.addEventListener("mouseleave", () => {

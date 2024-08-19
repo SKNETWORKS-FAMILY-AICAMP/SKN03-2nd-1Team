@@ -128,7 +128,7 @@ footer {
 }
 #bt_area > div {
    transition: transform 0.6s ease;
-   position: relative;
+   position: relative; 
 }
 #bt_img {
    position: absolute;
@@ -147,7 +147,8 @@ footer {
 }
 #bt_img img {
    height: inherit;
-}
+} 
 #Shadow > img {
    height: 23vh;
 }
+
