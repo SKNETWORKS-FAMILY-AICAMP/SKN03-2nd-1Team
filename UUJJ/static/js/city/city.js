@@ -1,28 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-   var geojsonUrl = "/static/data/seoul-gyeonggi.geojson";
+document.addEventListener('DOMContentLoaded', function() {
+   var geojsonUrl = "/static/data/seoul-gyeonggi.geojson"; 
 
-   var map = L.map("map", {
-      zoomControl: false,
-      dragging: true,
-      scrollWheelZoom: true,
-      wheelDebounceTime: 40, // 스크롤 휠 이벤트 사이의 최소 시간 간격 (밀리초)
-      wheelPxPerZoomLevel: 100, // 줌 레벨 변경에 필요한 스크롤 픽셀 수
-      minZoom: 8, // 최소 확대 레벨
-      maxZoom: 11, // 최대 확대 레벨
-      doubleClickZoom: false,
-      touchZoom: false,
-   }).setView([37.5665, 127.12], 9);
+   var map = L.map('map', {
+      zoomControl: false,        
+      dragging: false,        
+      scrollWheelZoom: false,    
+      doubleClickZoom: false,   
+      touchZoom: false          
+   }).setView([37.5665, 127.12], 8);
 
-   // 드래그 가능한 영역 설정 (남서쪽 및 북동쪽 좌표)
-   var southWest = L.latLng(38, 125.8);
-   var northEast = L.latLng(36.5, 128.4);
-   var bounds = L.latLngBounds(southWest, northEast);
-
-   map.setMaxBounds(bounds); // 지도 드래그 범위 제한
-   map.fitBounds(bounds); // 지도가 설정된 bounds에 맞게 크기 조정
-
-   // 추가: 지도가 경계 내에 맞지 않을 경우 발생할 수 있는 패딩 설정
-   map.options.maxBoundsViscosity = 1; // 드래그 경계에서의 탄성 설정 (0~1)
+   fetch(geojsonUrl)
+      .then(response => response.json())
+      .then(data => {
+         L.geoJSON(data, {
+               style: function(feature) {
+                  return {
+                     color: feature.properties.color || "#322F20", 
+                     weight: 5,
+                     fillColor: feature.properties.fillColor || "#FFE55A", 
+                     fillOpacity: 0.8
+                  };
+               },
+               onEachFeature: function(feature, layer) {
+                  if (feature.properties && feature.properties.SIG_KOR_NM) {
+                     layer.bindPopup(feature.properties.SIG_KOR_NM);
+                  }
+               }
+         }).addTo(map);
+      })
 
    var seoulLayer;
    var currentMarkers = [];
@@ -126,5 +131,5 @@ document.addEventListener("DOMContentLoaded", function () {
             addMarkers(saunaCityList, "sauna", reviewCounts);
          });
       })
-      .catch((error) => console.error("GeoJSON 로딩 에러:", error));
 });
+

@@ -73,11 +73,10 @@ footer {
    height: 480px;
    position: relative;
 }
-
 #bt_area > div {
    width: 320px;
    height: 320px;
-   transition: transform 0.6s ease;
+   transition: transform 0.4s ease;
    position: absolute;
 }
 #bt_img {
